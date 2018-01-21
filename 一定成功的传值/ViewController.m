@@ -23,9 +23,6 @@
     
     
     SecondViewController *s = segue.destinationViewController;
-    
-    static dispatch_once_t onceToken;
-    
     s.string = self.textfield.text;
 
 //    s.delegete = self;
