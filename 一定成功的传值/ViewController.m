@@ -7,15 +7,61 @@
 //
 
 #import "ViewController.h"
+#import "SecondViewController.h"
+@interface ViewController ()<chuangzhi>
 
-@interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *textfield;
+
 
 @end
 
 @implementation ViewController
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    
+    SecondViewController *s = segue.destinationViewController;
+    
+    static dispatch_once_t onceToken;
+    
+    s.string = self.textfield.text;
+
+//    s.delegete = self;
+    
+    s.b = ^(NSString  *ss){
+        self.textfield.text =ss;
+    };
+
+    
+}
+
+
+- (IBAction)action:(id)sender {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+-(void)change:(NSString *)s
+{
+    self.textfield.text = s;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
